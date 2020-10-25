@@ -1,0 +1,14 @@
+<p>first-component works!</p>
+
+<form [formGroup]="formGroup" novalidate (ngSubmit)="onSubmit()">
+    <mat-form-field class="full-width">
+        <input matInput [(ngModel)]="searchTitle" formControlName="title">
+        <mat-error *ngIf="formGroup.controls['title'].hasError('required')">
+            First name is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+    <div>
+        <button mat-raised-button color="primary" type="submit">Submit</button>
+    </div>
+    <div>{{ this.result }}</div>
+</form>
